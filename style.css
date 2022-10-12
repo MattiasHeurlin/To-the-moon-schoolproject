@@ -76,9 +76,12 @@
             text-align: center;
             position: relative;
             margin-left: 8%;
+            font-family: rubik, sans-serif;
         }
             .to-the-moon h1{
-                font-size: 3em;
+                font-size: 4em;
+                margin-top: 18px;
+                font-weight: 900;
             }
             .to-the-moon a{
                 text-decoration: none;
@@ -86,11 +89,12 @@
                 position: absolute;
                 left: 10px;
                 bottom: 5px;
-                font-size: 1.5em;
+                font-size: 1.2em;
             }
             .to-the-moon p{
                 margin-bottom: 0px;
             }
+            
     .nested-lower{
         grid-area:mobile-lower;
         height: 100vh;
