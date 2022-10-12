@@ -69,8 +69,8 @@
                         
                 
         .to-the-moon{
-            width: 250px;
-            height: 300px;
+            width: 40%;
+            height: 30%;
             border-style: solid;
             border-width: thick;
             text-align: center;
@@ -79,7 +79,7 @@
             font-family: rubik, sans-serif;
         }
             .to-the-moon h1{
-                font-size: 4em;
+                font-size: 3.5em;
                 margin-top: 18px;
                 font-weight: 900;
             }
