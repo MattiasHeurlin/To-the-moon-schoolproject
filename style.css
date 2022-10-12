@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+    "mobile-upper"
+    "mobile-lower";
+    width: 100%;
+}
+    
+    .nested-upper{
+        position:absolute;
+        grid-area: mobile-upper;
+        width: 100vh;
+        height: 100vh;
+        background-image:url(assets/photos/mobile-main.jpg);
+        max-width: 100%;
+        max-height: 100%;
+        background-size: cover;
+        background-color: aqua;
+        background-position: center;
+    }
+        nav{
+            text-align: right;
+            width: 100%;
+            height:auto;
+            padding-right: 20px;
+            padding-top: 20px;       
+        }
+            .nav-button{
+            width: 90px;
+            height: 90px;
+            background-color: transparent;
+            border: none;
+            }
+
+            button span{
+                display:block;
+                width: 90%;
+                height: 11px;
+                margin-bottom: 10px;
+                background-color: black;
+                border-radius: 15px;
+            }
+                span:nth-child(1){
+                    position:relative;
+                    left: 5px;
+                    transition: left 0.3s ease-in-out;
+                }
+                span:nth-child(2){
+                    position: relative;
+                    right: 5px;
+                    transition: right 0.3s ease-in-out;
+                }
+                span:nth-child(3){
+                    position: relative;
+                    left: 5px;
+                    transition: left 0.3s ease-in-out;
+                }
+                    button:hover span:nth-child(1),button:hover span:nth-child(3){
+                        left: 0;
+                    }
+                    button:hover span:nth-child(2){
+                        right: 0px;
+                    }
+                        
+                
+        .to-the-moon{
+            width: 250px;
+            height: 300px;
+            border-style: solid;
+            border-width: thick;
+            text-align: center;
+            position: relative;
+            margin-left: 8%;
+        }
+            .to-the-moon h1{
+                font-size: 3em;
+            }
+            .to-the-moon a{
+                text-decoration: none;
+                color: inherit;
+                position: absolute;
+                left: 10px;
+                bottom: 5px;
+                font-size: 1.5em;
+            }
+            .to-the-moon p{
+                margin-bottom: 0px;
+            }
+    .nested-lower{
+        grid-area:mobile-lower;
+        height: 100vh;
+        width: 100vh;
+        background-color: beige;
+    }
