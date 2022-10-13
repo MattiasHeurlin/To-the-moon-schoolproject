@@ -1,103 +1,154 @@
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
-.container{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  display: grid;
+  grid-template-rows: 100vh 100vh;
+  grid-template-columns: 1fr;
+  grid-template-areas:
     "mobile-upper"
     "mobile-lower";
-    width: 100%;
+  max-width: 100%;
+  border-style: solid;
 }
-    
-    .nested-upper{
-        position:absolute;
-        grid-area: mobile-upper;
-        width: 100vh;
-        height: 100vh;
-        background-image:url(assets/photos/adam-miller-dBaz0xhCkPY-unsplash.jpg);
-        max-width: 100%;
-        max-height: 100%;
-        background-size: cover;
-        background-color: aqua;
-        background-position: center;
-    }
-        nav{
-            text-align: right;
-            width: 100%;
-            height:auto;
-            padding-right: 20px;
-            padding-top: 20px;       
-        }
-            .nav-button{
-            width: 90px;
-            height: 90px;
-            background-color: transparent;
-            border: none;
-            }
 
-            button span{
-                display:block;
-                width: 90%;
-                height: 11px;
-                margin-bottom: 10px;
-                background-color: black;
-                border-radius: 15px;
-            }
-                span:nth-child(1){
-                    position:relative;
-                    left: 5px;
-                    transition: left 0.3s ease-in-out;
-                }
-                span:nth-child(2){
-                    position: relative;
-                    right: 5px;
-                    transition: right 0.3s ease-in-out;
-                }
-                span:nth-child(3){
-                    position: relative;
-                    left: 5px;
-                    transition: left 0.3s ease-in-out;
-                }
-                    button:hover span:nth-child(1),button:hover span:nth-child(3){
-                        left: 0;
-                    }
-                    button:hover span:nth-child(2){
-                        right: 0px;
-                    }
-                        
-                
-        .to-the-moon{
-            width: 40%;
-            height: 30%;
-            border-style: solid;
-            border-width: thick;
-            text-align: center;
-            position: relative;
-            margin-left: 8%;
-            font-family: rubik, sans-serif;
-        }
-            .to-the-moon h1{
-                font-size: 3.5em;
-                margin-top: 18px;
-                font-weight: 900;
-            }
-            .to-the-moon a{
-                text-decoration: none;
-                color: inherit;
-                position: absolute;
-                left: 10px;
-                bottom: 5px;
-                font-size: 1.2em;
-            }
-            .to-the-moon p{
-                margin-bottom: 0px;
-            }
+.nested-upper {
+  grid-area: mobile-upper;
+  background-image: url("assets/photos/adam-miller-dBaz0xhCkPY-unsplash.jpg");
+  max-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
 
-    .nested-lower{
-        grid-area:mobile-lower;
-        height: 100vh;
-        width: 100vh;
-        background-color: beige;
-    }
+.nav-button {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 90px;
+  height: 90px;
+  background-color: transparent;
+  border: none;
+  z-index: 3;
+}
+
+button span {
+  display: block;
+  width: 90%;
+  height: 11px;
+  margin-bottom: 10px;
+  background-color: black;
+  border-radius: 15px;
+}
+
+span:nth-child(1) {
+  position: relative;
+  left: 5px;
+  transition: all 0.3s ease-in-out;
+}
+span:nth-child(2) {
+  position: relative;
+  right: 5px;
+  transition: all 0.3s ease-in-out;
+}
+span:nth-child(3) {
+  position: relative;
+  left: 5px;
+  transition: all 0.3s ease-in-out;
+}
+input:hover + nav > button > span:nth-child(1),
+input:hover + nav > button > span:nth-child(3) {
+  left: 0;
+}
+input:hover + nav > button > span:nth-child(2) {
+  right: 0px;
+}
+input {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 4;
+  width: 90px;
+  height: 90px;
+  padding-right: 20px;
+  opacity: 0;
+}
+input:checked + nav > button > span:nth-child(1) {
+  top: 21px;
+  transform: rotate(-45deg);
+}
+input:checked + nav > button > span:nth-child(2) {
+  opacity: 0;
+}
+input:checked + nav > button > span:nth-child(3) {
+  transform: rotate(45deg);
+  bottom: 20px;
+}
+.popup-menu {
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  z-index: 2;
+  opacity: 0;
+}
+input:checked + nav > .popup-menu {
+  visibility: visible;
+  opacity: 1;
+}
+.popup-menu > ul {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 25%;
+  padding-top: 15;
+}
+.popup-menu > ul > li {
+  font-family: Rubik, sans-serif;
+  font-size: 3em;
+  list-style: none;
+  font-weight: 900;
+  text-shadow: 1px 3px grey;
+}
+.to-the-moon {
+  width: 40%;
+  height: 25%;
+  min-height: 270px;
+  min-width: 200px;
+  border-style: solid;
+  border-width: thick;
+  text-align: center;
+  position: relative;
+  margin-left: 8%;
+  margin-top: 12%;
+  font-family: Rubik, sans-serif;
+}
+.to-the-moon h1 {
+  font-size: 3.5em;
+  margin-top: 18px;
+  font-weight: 900;
+}
+.to-the-moon a {
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  font-size: 1.2em;
+}
+.to-the-moon p {
+  margin-bottom: 0px;
+}
+.nested-lower {
+  grid-area: mobile-lower;
+  height: 100vh;
+  max-width: 100%;
+  background-color: beige;
+}
