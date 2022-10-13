@@ -15,7 +15,6 @@ a {
   max-width: 100%;
   border-style: solid;
 }
-
 .nested-upper {
   grid-area: mobile-upper;
   background-image: url("assets/photos/adam-miller-dBaz0xhCkPY-unsplash.jpg");
@@ -23,7 +22,6 @@ a {
   background-size: cover;
   background-position: center;
 }
-
 .nav-button {
   position: fixed;
   right: 20px;
@@ -32,9 +30,8 @@ a {
   height: 90px;
   background-color: transparent;
   border: none;
-  z-index: 3;
+  z-index: 5;
 }
-
 button span {
   display: block;
   width: 90%;
@@ -43,18 +40,17 @@ button span {
   background-color: black;
   border-radius: 15px;
 }
-
-span:nth-child(1) {
+button > span:nth-child(1) {
   position: relative;
   left: 5px;
   transition: all 0.3s ease-in-out;
 }
-span:nth-child(2) {
+button > span:nth-child(2) {
   position: relative;
   right: 5px;
   transition: all 0.3s ease-in-out;
 }
-span:nth-child(3) {
+button > span:nth-child(3) {
   position: relative;
   left: 5px;
   transition: all 0.3s ease-in-out;
@@ -70,7 +66,7 @@ input {
   position: fixed;
   right: 20px;
   top: 20px;
-  z-index: 4;
+  z-index: 6;
   width: 90px;
   height: 90px;
   padding-right: 20px;
@@ -95,7 +91,7 @@ input:checked + nav > button > span:nth-child(3) {
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, 0.85);
-  z-index: 2;
+  z-index: 4;
   opacity: 0;
 }
 input:checked + nav > .popup-menu {
@@ -118,6 +114,7 @@ input:checked + nav > .popup-menu {
   list-style: none;
   font-weight: 900;
   text-shadow: 1px 3px grey;
+  text-transform: uppercase;
 }
 .to-the-moon {
   width: 40%;
@@ -132,28 +129,26 @@ input:checked + nav > .popup-menu {
   margin-top: 12%;
   font-family: Rubik, sans-serif;
 }
-.to-the-moon h1 {
+.to-the-moon > h1 {
   font-size: 3.5em;
   margin-top: 18px;
   font-weight: 900;
+  text-transform: uppercase;
 }
-.to-the-moon a {
+.to-the-moon > div {
   position: absolute;
   left: 15px;
   bottom: 10px;
   font-size: 1.2em;
 }
-.to-the-moon p {
-  margin-bottom: 0px;
-}
-.arrow-move-r{
+.arrow-move-r {
   position: relative;
-  font-size: 1.5em;
-  margin-bottom: 0px;
-  top: 1px;
+  font-size: 2em;
+  top: 5px;
+  left: 5px;
   transition: all 0.3s ease-in-out;
 }
-.to-the-moon > a:hover + .arrow-move-r{
+.to-the-moon > div > a:hover + .arrow-move-r {
   left: 15px;
 }
 .nested-lower {
@@ -165,50 +160,52 @@ input:checked + nav > .popup-menu {
   background-size: cover;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 210px auto auto auto;
-  grid-template-areas: 
-  "header1"
-  "text1"
-  "blockquote"
-  "text2";
+  grid-template-rows: 200px auto auto auto;
+  grid-template-areas:
+    "header1"
+    "text1"
+    "blockquote"
+    "text2";
   color: white;
-  padding: 8%;
+  padding: 7%;
   padding-top: 0;
   font-family: Rubik, sans-serif;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-.text1, .qoute, .text2{
-  line-height: 1.7;
+.text1,
+.qoute,
+.text2 {
+  line-height: 1.6;
 }
-.header-p2{
-  grid-area:header1;
-  position: relative;
+.header-p2 {
+  grid-area: header1;
   font-weight: 900;
   padding-left: 5%;
+  padding-top: 10%;
 }
-.header-p2 > h2{
-  position: absolute;
-  top:55px;
-  font-size: 4.2em;
+.header-p2 > h2 > span:nth-child(1) {
+  position: relative;
+  top: 0x;
+  font-size: 3em;
   z-index: 2;
   margin: 0;
 }
-.header-p2 > h3{
-  position: absolute;
-  left: 80px;
-  bottom: 50px;
+.header-p2 > h2 > span:nth-child(2) {
+  position: relative;
+  right: 135px;
+  top: 28px;
   z-index: 0;
-  font-size: 4.5em;
+  font-size: 3.2em;
   color: grey;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   margin: 0;
 }
-
-.text1{
-  grid-area:text1;
+.text1 {
+  grid-area: text1;
 }
-.qoute{
-  grid-area:blockquote;
+.qoute {
+  grid-area: blockquote;
   font-size: 1.5em;
   margin: 0;
   font-weight: 100;
@@ -216,6 +213,21 @@ input:checked + nav > .popup-menu {
   line-height: 1.4;
   padding-left: 10%;
 }
-.text2{
-  grid-area:text2;
+.text2 {
+  grid-area: text2;
+}
+.text2 > a {
+  color: rgb(209, 0, 161);
+  text-decoration: underline;
+}
+.text2 > span {
+  position: relative;
+  color: rgb(209, 0, 161);
+  font-size: 1.8em;
+  margin-left: 5px;  
+  top: 3px;
+  transition: all 0.3s ease-in-out;
+} /* Transition fungerar ej som de ska här, kan inte förstå förvaför inte ännu, återkmr hit */
+.text2 > a:hover + span {
+  left: 15px;
 }
