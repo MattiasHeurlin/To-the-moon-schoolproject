@@ -75,6 +75,7 @@ input {
   height: 90px;
   padding-right: 20px;
   opacity: 0;
+  cursor: pointer;
 }
 input:checked + nav > button > span:nth-child(1) {
   top: 21px;
@@ -110,7 +111,6 @@ input:checked + nav > .popup-menu {
   align-items: center;
   text-align: center;
   padding-bottom: 25%;
-  padding-top: 15;
 }
 .popup-menu > ul > li {
   font-family: Rubik, sans-serif;
@@ -146,9 +146,76 @@ input:checked + nav > .popup-menu {
 .to-the-moon p {
   margin-bottom: 0px;
 }
+.arrow-move-r{
+  position: relative;
+  font-size: 1.5em;
+  margin-bottom: 0px;
+  top: 1px;
+  transition: all 0.3s ease-in-out;
+}
+.to-the-moon > a:hover + .arrow-move-r{
+  left: 15px;
+}
 .nested-lower {
   grid-area: mobile-lower;
   height: 100vh;
   max-width: 100%;
-  background-color: beige;
+  background-image: url("assets/photos/mobile-2.jpg");
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 210px auto auto auto;
+  grid-template-areas: 
+  "header1"
+  "text1"
+  "blockquote"
+  "text2";
+  color: white;
+  padding: 8%;
+  padding-top: 0;
+  font-family: Rubik, sans-serif;
+  overflow: auto;
+}
+.text1, .qoute, .text2{
+  line-height: 1.7;
+}
+.header-p2{
+  grid-area:header1;
+  position: relative;
+  font-weight: 900;
+  padding-left: 5%;
+}
+.header-p2 > h2{
+  position: absolute;
+  top:55px;
+  font-size: 4.2em;
+  z-index: 2;
+  margin: 0;
+}
+.header-p2 > h3{
+  position: absolute;
+  left: 80px;
+  bottom: 50px;
+  z-index: 0;
+  font-size: 4.5em;
+  color: grey;
+  font-family: 'Times New Roman', Times, serif;
+  margin: 0;
+}
+
+.text1{
+  grid-area:text1;
+}
+.qoute{
+  grid-area:blockquote;
+  font-size: 1.5em;
+  margin: 0;
+  font-weight: 100;
+  font-style: italic;
+  line-height: 1.4;
+  padding-left: 10%;
+}
+.text2{
+  grid-area:text2;
 }
