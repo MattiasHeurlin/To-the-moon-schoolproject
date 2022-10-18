@@ -1,0 +1,8 @@
+$debug: false;
+$client-purple: rgb(209, 0, 161);
+@import 'scss-stuff/_normalize';
+@import 'scss-stuff/_base-mobile';
+@import 'scss-stuff/_navmenu';
+@media screen and (min-width: 1024px) {
+  @import 'scss-stuff/_desktop';
+}

@@ -1,0 +1,197 @@
+* {
+  box-sizing: border-box;
+}
+div, main, section, article {
+  @if $debug{
+  outline: 1px purple;
+}
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  display: grid;
+  grid-template-rows: 100vh minmax(100vh, auto);
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "mobile-upper"
+    "mobile-lower";
+  min-width: 100%;
+  border-style: solid;
+}
+.nested-upper {
+  grid-area: mobile-upper;
+  background-image: url("assets/photos/adam-miller-dBaz0xhCkPY-unsplash.jpg");
+  max-height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.to-the-moon {
+  width: 40%;
+  height: 25%;
+  min-height: 270px;
+  min-width: 200px;
+  border-style: solid;
+  border-width: thick;
+  text-align: center;
+  position: relative;
+  margin-left: 8%;
+  margin-top: 12%;
+  font-family: Rubik, sans-serif;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.to-the-moon > h1 {
+  font-size: 3.5em;
+  margin-top: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.to-the-moon > div {
+  position: absolute;
+  left: 15px;
+  bottom: 10px;
+  font-size: 1.2em;
+}
+.arrow-move-r {
+  position: relative;
+  font-size: 2em;
+  top: 5px;
+  left: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.to-the-moon > div > a:hover + .arrow-move-r {
+  left: 15px;
+}
+.mid-arrow {
+  position: absolute;
+  left: 50%;
+  bottom: 2%;
+  font-size: 3.8em;
+  color: white;
+  transform: rotate(90deg);
+}
+.nested-lower {
+  grid-area: mobile-lower;
+  min-height: 100vh;
+  max-width: 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("assets/photos/mobile-2.jpg");
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 5% 90% 5%;
+  grid-template-rows: 200px 1fr 0.4fr 1fr 90px;
+  grid-template-areas:
+    ". header1 ."
+    ". text1 ."
+    ". blockquote ."
+    ". text2 ."
+    "cookies cookies cookies";
+  color: white;
+  padding-top: 0;
+  font-family: Rubik, sans-serif;
+  overflow-x: hidden;
+}
+.text1,
+.qoute,
+.text2 {
+  line-height: 1.6;
+}
+.header-p2 {
+  grid-area: header1;
+  font-weight: 500;
+  padding-left: 5%;
+  padding-top: 10%;
+  text-align: center;
+}
+.header-p2 > h2 > span:nth-child(1) {
+  position: relative;
+  top: 0x;
+  font-size: 3em;
+  z-index: 2;
+  margin: 0;
+}
+.header-p2 > h2 > span:nth-child(2) {
+  position: relative;
+  right: 135px;
+  top: 28px;
+  z-index: 0;
+  font-size: 3.2em;
+  color: grey;
+  font-family: "Times New Roman", Times, serif;
+  margin: 0;
+  opacity: 0.9;
+}
+.text1 {
+  grid-area: text1;
+  h3 {
+    font-size: 1.8rem;
+  }
+}
+.qoute {
+  grid-area: blockquote;
+  font-size: 1.5em;
+  margin: 0;
+  font-weight: 100;
+  font-style: italic;
+  line-height: 1.4;
+  padding-left: 10%;
+  align-self: center;
+  font-weight: 300;
+}
+.text2 {
+  grid-area: text2;
+}
+.floatingmajor {
+  display: none;
+  float: right;
+  height: 160px;
+  width: 105px;
+}
+.text2 > a {
+  color: $client-purple;
+  text-decoration: underline;
+}
+.text2 > span {
+  position: relative;
+  color: rgb(209, 0, 161);
+  font-size: 1.8em;
+  margin-left: 5px;
+  top: 3px;
+  transition: all 0.3s ease-in-out;
+} /* Transition fungerar ej som de ska här, kan inte förstå förvaför inte ännu, återkmr hit */
+.text2 > a:hover + span {
+  left: 15px;
+}
+footer {
+  grid-area: cookies;
+  background-color: rgb(0, 6, 25);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer > h4 {
+  color: $client-purple;
+  margin-left: 15px;
+  text-shadow: 0 0 7px $client-purple;
+  text-shadow: 0 0 10px $client-purple;
+  text-shadow: 0 0 21px $client-purple;
+}
+footer > button {
+  height: 35px;
+  width: 88px;
+  margin-right: 15px;
+  margin-left: 10px;
+  background-color: rgb(12, 12, 125);
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+.deskqoute {
+  display: none;
+}
