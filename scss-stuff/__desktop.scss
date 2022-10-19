@@ -43,6 +43,7 @@
   grid-column: 2 / 4;
   grid-row: 2 / 3;
   padding: 0;
+  margin-bottom: 20px;
   h2 {
     margin: 0;
   }
@@ -57,12 +58,11 @@
 }
 
 .text1 {
-  padding-top: 15%;
   grid-column: 2 / 4;
   grid-row: 3 / 6;
+  padding-top: 10%;
 }
-.qoute {
-  padding-top: 15%;
+.qoute { 
   grid-column: 2 / 4;
   grid-row: 5 / 7;
 }

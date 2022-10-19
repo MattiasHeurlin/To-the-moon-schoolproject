@@ -83,7 +83,7 @@ a {
   background-size: cover;
   display: grid;
   grid-template-columns: 5% 90% 5%;
-  grid-template-rows: 200px 1fr 0.4fr 1fr 90px;
+  grid-template-rows: 200px 1fr 0.4 1fr 90px;
   grid-template-areas:
     ". header1 ."
     ". text1 ."
@@ -133,14 +133,38 @@ a {
 }
 .qoute {
   grid-area: blockquote;
-  font-size: 1.5em;
+  position: relative;
   margin: 0;
-  font-weight: 100;
+  font-weight: 300;
   font-style: italic;
-  line-height: 1.4;
+  line-height: 1.3;
   padding-left: 10%;
   align-self: center;
-  font-weight: 300;
+  p{
+    position: relative;
+    width: 450px;
+    font-size: 1.5rem;
+    height: 160px;
+  }
+    &>p::before,&>p::after{
+      font-size: 6rem;
+      display: block;
+      position: absolute;
+      font-family: 'Times New Roman', Times, serif;
+      color: $client-purple;
+      opacity: 0.45;
+    }
+    & > p::before{
+      content: open-quote;
+      left: -40px;
+      top: -39px;
+      
+    }
+    & > p::after{
+       content: close-quote;
+       right: 248px;
+       bottom: -15px;
+    }
 }
 .text2 {
   grid-area: text2;
