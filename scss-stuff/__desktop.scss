@@ -1,6 +1,8 @@
-@media screen and (min-width: 1500px){
-  .text1, .text2, .qoute{
-  font-size: 1.1rem;
+@media screen and (min-width: 1500px) {
+  .text1,
+  .text2,
+  .qoute {
+    font-size: 1.1rem;
   }
 }
 .nested-upper {
@@ -62,7 +64,7 @@
   grid-row: 3 / 6;
   padding-top: 10%;
 }
-.qoute { 
+.qoute {
   grid-column: 2 / 4;
   grid-row: 5 / 7;
 }
@@ -78,7 +80,11 @@
   padding-right: 20%;
   // Är webkit's stöd för olika webläsare fortfarande ett problem?
   // Återkommer hit efter jag testat i olika webläsare
-  background: -webkit-linear-gradient(rgb(202, 24, 140), rgb(255, 252, 252), rgb(218, 30, 218));
+  background: -webkit-linear-gradient(
+    rgb(202, 24, 140),
+    rgb(255, 252, 252),
+    rgb(218, 30, 218)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 0.5;

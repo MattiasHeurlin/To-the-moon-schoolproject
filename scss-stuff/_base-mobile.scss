@@ -1,10 +1,13 @@
 * {
   box-sizing: border-box;
 }
-div, main, section, article {
-  @if $debug{
-  outline: 1px purple;
-}
+div,
+main,
+section,
+article {
+  @if $debug {
+    outline: 1px purple;
+  }
 }
 
 a {
@@ -140,31 +143,31 @@ a {
   line-height: 1.3;
   padding-left: 10%;
   align-self: center;
-  p{
+  p {
     position: relative;
     width: 450px;
     font-size: 1.5rem;
     height: 160px;
   }
-    &>p::before,&>p::after{
-      font-size: 6rem;
-      display: block;
-      position: absolute;
-      font-family: 'Times New Roman', Times, serif;
-      color: $client-purple;
-      opacity: 0.45;
-    }
-    & > p::before{
-      content: open-quote;
-      left: -40px;
-      top: -39px;
-      
-    }
-    & > p::after{
-       content: close-quote;
-       right: 248px;
-       bottom: -15px;
-    }
+  & > p::before,
+  & > p::after {
+    font-size: 6rem;
+    display: block;
+    position: absolute;
+    font-family: "Times New Roman", Times, serif;
+    color: $client-purple;
+    opacity: 0.45;
+  }
+  & > p::before {
+    content: open-quote;
+    left: -40px;
+    top: -39px;
+  }
+  & > p::after {
+    content: close-quote;
+    right: 248px;
+    bottom: -15px;
+  }
 }
 .text2 {
   grid-area: text2;
