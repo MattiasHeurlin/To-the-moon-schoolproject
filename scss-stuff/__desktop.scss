@@ -1,10 +1,4 @@
-@media screen and (min-width: 1500px) {
-  .text1,
-  .text2,
-  .qoute {
-    font-size: 1.1rem;
-  }
-}
+
 .nested-upper {
   background-image: url("assets/photos/desktopversion.jpg");
 }
@@ -32,10 +26,10 @@
 }
 .popup-menu > ul > li > a:hover {
   border-bottom: 7px solid rgb(209, 0, 161);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .nested-lower {
-  min-height: 100vh;
+  height: 100vh;
   grid-template-columns: 0.5fr repeat(5, 1fr) 0.5fr;
   grid-template-rows: 0.5fr repeat(5, 1fr) 0.5fr;
   grid-template-areas: none;
@@ -65,8 +59,8 @@
   padding-top: 10%;
 }
 .qoute {
-  grid-column: 2 / 4;
-  grid-row: 5 / 7;
+  padding-left: 75px;
+  padding-top: 0;
 }
 .deskqoute {
   grid-column: 5 / 7;
