@@ -6,4 +6,6 @@ $client-purple: rgb(209, 0, 161);
 @media screen and (min-width: 1024px) {
   @import 'scss-stuff/_desktop';
 }
+@media screen and(max-width:520px){
 @import 'scss-stuff/responsiv';
+}

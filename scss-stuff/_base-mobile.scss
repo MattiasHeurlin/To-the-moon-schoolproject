@@ -6,7 +6,7 @@ main,
 section,
 article {
   @if $debug {
-    outline: 1px purple solid;
+    outline: 1px solid green;
   }
 }
 
@@ -21,8 +21,7 @@ a {
   grid-template-areas:
     "mobile-upper"
     "mobile-lower";
-  min-width: 100%;
-  border-style: solid;
+  width: 100%;
 }
 .nested-upper {
   grid-area: mobile-upper;
@@ -78,8 +77,6 @@ a {
 }
 .nested-lower {
   grid-area: mobile-lower;
-  min-height: 100vh;
-  width: 100%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("assets/photos/mobile-2.jpg");
   background-position: center;
@@ -147,6 +144,7 @@ a {
     width: 450px;
     font-size: 1.5rem;
     height: 100px;
+    z-index: 3;
   }
   & > p::before,
   & > p::after {
@@ -156,6 +154,7 @@ a {
     font-family: "Times New Roman", Times, serif;
     color: $client-purple;
     opacity: 0.45;
+    z-index: 1;
   }
   & > p::before {
     content: open-quote;
